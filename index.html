@@ -1,0 +1,21 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bob Adder</title>
+        <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+    </head>
+    <body>
+        
+    <script>
+grist.ready({requiredAccess: "full"});
+
+document.getElementById("add-bob-btn").onclick = function() {
+    alert("Adding a Bob!");
+    grist.docApi.applyUserActions([["AddRecord", "Table1", null, {Name: "Bob", Fav_Number: 7, Is_Cool: true}]]);
+}
+    </script>
+
+    <button id="add-bob-btn">Add Bob</button>
+
+    </body>
+</html>
